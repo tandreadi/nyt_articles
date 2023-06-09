@@ -1,0 +1,58 @@
+version: 2
+
+sources:
+  - name: nytarticles
+    schema: nyt_articles_dataset
+    description: A BigQuery dataset that stores NYT posts' metadata
+    tables:
+      - name: nyt_articles
+        description: A BigQuery table with NYT posts' metadata
+        columns:
+        - name: slug_name
+          description: A small title of the post
+        - name: section
+          description: The NYT group where the post belongs
+        - name: subsection
+          description: The NYT subgroup where the post belongs
+        - name: title
+          description: The title of the post
+        - name: subheadline
+          description: A mini-headline under the main headline
+        - name: abstract
+          description: The summary of the contents of the post
+        - name: url
+          description: The URL that leads to the post
+        - name: uri
+          description: The unique identifier of the post
+        - name: byline
+          description: The author(s) of the post
+        - name: thumbnail_standard
+          description: The URL of the thumbnail
+        - name: item_type
+          description: The type of the post (ex. Interactive, Article, Video etc)
+        - name: source
+          description: The source of the post
+        - name: updated_date
+          description: The last updated date of the post
+        - name: created_date
+          description: The day when the post was created
+        - name: published_date
+          description: The day when the post was published
+        - name: first_published_date
+          description: The day when the post was first published
+        - name: material_type_facet
+          descritpion: The type of the post (ex. News, Review, Briefing etc)
+        - name: kicker
+          description: A supplement headline that packs meaning and is placed at the top of the title 
+        - name: organisation_facet
+          description: Organisations associate with the post
+        - name: geographical_facet
+          description: Locations associate with the post
+        - name: person_facet
+          description: People associate with the 
+        - name: des_facet
+          description: sth sth sth
+        - name: related_urls
+          description: A list of other post' urls that are related to the current post
+        - name:  multimedia
+          description: The multimedia that the post contains

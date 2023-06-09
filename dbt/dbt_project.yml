@@ -1,0 +1,18 @@
+name: nytarticles
+
+config-version: 2
+version: '0.1'
+
+model-paths: ["models"]
+target-path: "target"
+test-paths: ["tests"]
+clean-targets:
+    - "target"
+    - "dbt_modules"
+    - "logs"
+
+profile: my-bigquery-db
+
+models:
+  staging:
+    +materialized: view

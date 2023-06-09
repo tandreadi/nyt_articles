@@ -1,0 +1,66 @@
+version: 2
+
+models:
+  - name: stg_nytarticles__metadata
+    description: This view transforms the data from the data source
+    columns:
+      - name: article_id
+        description: The unique identifier for the article
+        tests:
+          - unique
+          - not_null
+  - name: int_daily_metadata
+    description: This view contains a daily overview of the New York Times articles
+    columns:
+    - name: published_date
+      description: The day when the post was published
+    - name: item_type
+      description: The type of the post (ex. Interactive, Article, Video etc)
+    - name: section
+      description: The NYT group where the post belongs
+    - name: material_type_facet
+      descritpion: The type of the post (ex. News, Review, Briefing etc)
+    - name: number_of_articles
+      description: The daily number of published posts
+    - name: average_title_length
+      description: The daily average title length of the published posts
+    - name: average_abstract_length
+      description: The daily average abstract length of the published posts
+  - name: int_authors_flattened
+    description: This view contains the articles published by each author
+    columns:
+    - name: article_id
+      description: The unique identifier of the post
+    - name: section
+      description: The NYT group where the post belongs
+    - name: subsection
+      description: The NYT subgroup where the post belongs
+    - name: title
+      description: The title of the post
+    - name: organisation_facet
+      description: Organisations associate with the post
+    - name: material_type_facet
+      descritpion: The type of the post (ex. News, Review, Briefing etc)
+    - name: item_type
+      description: The type of the post (ex. Interactive, Article, Video etc)
+    - name: title_length
+      description: The number of characters of the post's title
+    - name: abstract_length
+      description: The number of characters of the post's abstract
+    - name: author
+      description: The author of the post
+  - name: int_related_urls_flattened
+    description: This view contains the articles that have related urls and the corresponding related urls
+    columns:
+    - name: article_id
+      description: The unique identifier of the post
+    - name: title
+      description: The title of the post
+    - name: url
+      description: The URL that leads to the post
+    - name: section
+      description: The NYT group where the post belongs
+    - name: subsection
+      description: The NYT subgroup where the post belongs
+    - name: reffering_url
+      description: The url of the post that is referred by the current article  

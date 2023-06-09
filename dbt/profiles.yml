@@ -1,0 +1,9 @@
+my-bigquery-db:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: nytarticles
+      dataset: nyt_articles_dataset
+      keyfile: "../loader/nytarticles-bigquery_credentials.json"

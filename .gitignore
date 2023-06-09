@@ -1,0 +1,5 @@
+loader/nytarticles-bigquery_credentials.json
+loader/__pycache__/
+dbt/target/
+dbt/dbt_packages/
+dbt/logs/
